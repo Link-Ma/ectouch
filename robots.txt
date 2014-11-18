@@ -3,7 +3,6 @@ User-agent: *
 Disallow: /admin/
 Disallow: /api/
 Disallow: /data/
-Disallow: /install/
+Disallow: /include/
 Disallow: /plugins/
-Disallow: /source/
 Disallow: /themes/

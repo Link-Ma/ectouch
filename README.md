@@ -1,1 +1,1 @@
-ECTouch 2.0
+ECTouch 1.0
