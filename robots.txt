@@ -1,0 +1,9 @@
+User-agent: *
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /data/
+Disallow: /install/
+Disallow: /plugins/
+Disallow: /source/
+Disallow: /themes/
