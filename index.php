@@ -18,6 +18,6 @@ define('IN_ECTOUCH', true);
 /* 绑定模块 */
 define('BIND_MODULE', 'Index');
 /* 载入配置文件 */
-require('include/define.php');
+require ('include/define.php');
 /* 载入核心文件 */
-require(TOUCH_PATH."system/init.php");
+require (TOUCH_PATH . "system/init.php");
