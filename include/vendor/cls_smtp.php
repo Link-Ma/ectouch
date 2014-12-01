@@ -4,15 +4,13 @@
  * SMTP 邮件类
 */
 
-if (!defined('IN_ECS'))
-{
-    die('Hacking attempt');
-}
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
 
 define('SMTP_STATUS_NOT_CONNECTED', 1, true);
 define('SMTP_STATUS_CONNECTED',     2, true);
 
-class EcsSmtp // smtp
+class smtp
 {
     var $connection;
     var $recipients;

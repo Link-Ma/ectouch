@@ -2,14 +2,12 @@
 
 /**
  * MYSQL 公用类库
-*/
+ */
 
-if (!defined('IN_ECS'))
-{
-    die('Hacking attempt');
-}
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
 
-class EcsMysql // cls_mysql
+class cls_mysql
 {
     var $link_id    = NULL;
 

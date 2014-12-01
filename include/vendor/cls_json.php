@@ -1,20 +1,13 @@
 <?php
 
 /**
- * JSON 
+ * JSON类
  */
 
-if (!defined('IN_ECS'))
-{
-    die('Hacking attempt');
-}
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
 
-if (!defined('EC_CHARSET'))
-{
-    define('EC_CHARSET', 'utf-8');
-}
-
-class EcsJson // JSON
+class JSON
 {
     var $at   = 0;
     var $ch   = '';

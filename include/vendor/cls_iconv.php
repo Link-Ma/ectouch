@@ -1,14 +1,12 @@
 <?php
 /**
  * 字符集转换类
-*/
+ */
 
-if (!defined('IN_ECS'))
-{
-    die('Hacking attempt');
-}
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
 
-class EcsIconv // Chinese
+class Chinese
 {
     /**
      * 存放 GB <-> UNICODE 对照表的内容

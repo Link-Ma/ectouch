@@ -4,17 +4,16 @@
  * 短信模块 之 模型（类库）
  */
 
-if (!defined('IN_ECS'))
-{
-    die('Hacking attempt');
-}
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
+
 define('SOURCE_TOKEN', 'b11983d30cb6821158744d5d065d0f70');
 define('SOURCE_ID', '620386');
 require_once(ROOT_PATH . 'includes/cls_transport.php');
 require_once(ROOT_PATH . 'includes/shopex_json.php');
 
 /* 短信模块主类 */
-class EcsSms // sms
+class sms
 {
     /**
      * 存放提供远程服务的URL。

@@ -2,12 +2,10 @@
 
 /**
  * RSS 类
-*/
+ */
 
-if (!defined('IN_ECS'))
-{
-    die('Hacking attempt');
-}
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
 
 /*-----------------------------------------------------------------------*/
 // @package RSSBuilder
@@ -31,7 +29,7 @@ if (!defined('IN_ECS'))
 // @version 1.001
 /*-----------------------------------------------------------------------*/
 
-class EcsRss // RSSBase
+class RSSBase
 {
     /*-----------------------*/
     /* C O N S T R U C T O R */

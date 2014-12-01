@@ -5,12 +5,10 @@
  * 并以一维数组的形式返回，如：array('header' => 'bar', 'body' => 'foo')。
  */
 
-if (!defined('IN_ECS'))
-{
-    die('Hacking attempt');
-}
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
 
-class EcsTransport // transport
+class transport
 {
     /**
      * 脚本执行时间。－1表示采用PHP的默认值。

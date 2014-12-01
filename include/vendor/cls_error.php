@@ -2,14 +2,12 @@
 
 /**
  * 用户级错误处理类
-*/
+ */
 
-if (!defined('IN_ECS'))
-{
-    die('Hacking attempt');
-}
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
 
-class EcsError // ecs_error
+class ecs_error
 {
     var $_message   = array();
     var $_template  = '';

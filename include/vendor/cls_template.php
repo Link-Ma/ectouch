@@ -3,8 +3,11 @@
 /**
  * 模版类
  */
+ 
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
 
-class EcsTemplate // cls_template
+class cls_template
 {
     var $template_dir   = '';
     var $cache_dir      = '';
@@ -410,8 +413,7 @@ class EcsTemplate // cls_template
         }
         else
         {
-            $tag_array = explode(' ', $tag);
-            $tag_sel = array_shift($tag_array);
+            $tag_sel = array_shift(explode(' ', $tag));
             switch ($tag_sel)
             {
                 case 'if':

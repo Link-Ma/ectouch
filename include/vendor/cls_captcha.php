@@ -2,14 +2,12 @@
 
 /**
  * 验证码图片类
-*/
+ */
 
-if (!defined('IN_ECS'))
-{
-    die('Hacking attempt');
-}
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
 
-class EcsCaptcha //captcha
+class captcha
 {
     /**
      * 背景图片所在目录

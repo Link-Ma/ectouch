@@ -11,14 +11,12 @@
  *  define('ERR_INVALID_PARAM',             6);
  *  define('ERR_INVALID_IMAGE_TYPE',        7);
  *  define('ROOT_PATH',                     '网站根目录')
-*/
+ */
 
-if (!defined('IN_ECS'))
-{
-    die('Hacking attempt');
-}
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
 
-class EcsImage // cls_image
+class cls_image
 {
     var $error_no    = 0;
     var $error_msg   = '';
@@ -132,7 +130,7 @@ class EcsImage // cls_image
      */
     function make_thumb($img, $thumb_width = 0, $thumb_height = 0, $path = '', $bgcolor='')
     {
-         $gd = self::gd_version(); //获取 GD 版本。0 表示没有 GD 库，1 表示 GD 1.x，2 表示 GD 2.x
+         $gd = $this->gd_version(); //获取 GD 版本。0 表示没有 GD 库，1 表示 GD 1.x，2 表示 GD 2.x
          if ($gd == 0)
          {
              $this->error_msg = $GLOBALS['_LANG']['missing_gd'];
@@ -302,7 +300,7 @@ class EcsImage // cls_image
     function add_watermark($filename, $target_file='', $watermark='', $watermark_place='', $watermark_alpha = 0.65)
     {
         // 是否安装了GD
-        $gd = self::gd_version();
+        $gd = $this->gd_version();
         if ($gd == 0)
         {
             $this->error_msg = $GLOBALS['_LANG']['missing_gd'];
@@ -665,7 +663,7 @@ class EcsImage // cls_image
      * @access      public
      * @return      int         可能的值为0，1，2
      */
-    static function gd_version()
+    function gd_version()
     {
         static $version = -1;
 

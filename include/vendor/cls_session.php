@@ -1,15 +1,13 @@
 <?php
 
 /**
- * SESSION
-*/
+ * SESSION 鍏?敤绫诲簱
+ */
 
-if (!defined('IN_ECS'))
-{
-    die('Hacking attempt');
-}
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
 
-class EcsSession // cls_session
+class cls_session
 {
     var $db             = NULL;
     var $session_table  = '';
