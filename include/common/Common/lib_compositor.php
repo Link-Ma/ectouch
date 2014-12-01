@@ -3,7 +3,7 @@
 /**
  * 支付插件排序文件
  */
-
+ 
 /* 访问控制 */
 defined('IN_ECTOUCH') or die('Deny Access');
 

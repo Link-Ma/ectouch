@@ -2,7 +2,7 @@
 
 /**
  * 商品相关函数库
-*/
+ */
 
 /* 访问控制 */
 defined('IN_ECTOUCH') or die('Deny Access');

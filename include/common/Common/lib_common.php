@@ -2,7 +2,7 @@
 
 /**
  * 公用函数库
-*/
+ */
 
 /* 访问控制 */
 defined('IN_ECTOUCH') or die('Deny Access');
@@ -1889,12 +1889,12 @@ function article_cat_list($cat_id = 0, $selected = 0, $re_type = true, $level = 
         if ($data === false)
         {
             $sql = "SELECT c.*, COUNT(s.cat_id) AS has_children, COUNT(a.article_id) AS aricle_num ".
-               ' FROM {pre}article_cat AS c'.
-               " LEFT JOIN {pre}article_cat AS s ON s.parent_id=c.cat_id".
-               " LEFT JOIN {pre}article AS a ON a.cat_id=c.cat_id".
+               ' FROM ' . $GLOBALS['ecs']->table('article_cat') . " AS c".
+               " LEFT JOIN " . $GLOBALS['ecs']->table('article_cat') . " AS s ON s.parent_id=c.cat_id".
+               " LEFT JOIN " . $GLOBALS['ecs']->table('article') . " AS a ON a.cat_id=c.cat_id".
                " GROUP BY c.cat_id ".
                " ORDER BY parent_id, sort_order ASC";
-            $res = M()->query($sql);
+            $res = $GLOBALS['db']->getAll($sql);
             write_static_cache('art_cat_pid_releate', $res);
         }
         else

@@ -2,7 +2,7 @@
 
 /**
  * 时间函数
-*/
+ */
 
 /* 访问控制 */
 defined('IN_ECTOUCH') or die('Deny Access');

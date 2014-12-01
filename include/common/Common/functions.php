@@ -1,5 +1,8 @@
 <?php
 
+/* 访问控制 */
+defined('IN_ECTOUCH') or die('Deny Access');
+
 /**
      * 将指定的表名加上前缀后返回
      *

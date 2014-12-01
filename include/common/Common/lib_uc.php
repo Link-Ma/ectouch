@@ -26,7 +26,7 @@ function add_feed($id, $feed_type)
             return;
         }
         $id = intval($id);
-        $order_res = M()->query("SELECT g.goods_id, g.goods_name, g.goods_sn, g.goods_desc, g.goods_thumb, o.goods_price FROM {pre}order_goods AS o, {pre}goods AS g WHERE o.order_id='{$id}' AND o.goods_id=g.goods_id");
+        $order_res = $GLOBALS['db']->getAll("SELECT g.goods_id, g.goods_name, g.goods_sn, g.goods_desc, g.goods_thumb, o.goods_price FROM " . $GLOBALS['ecs']->table('order_goods') . " AS o, " . $GLOBALS['ecs']->table('goods') . " AS g WHERE o.order_id='{$id}' AND o.goods_id=g.goods_id");
         foreach($order_res as $goods_data)
         {
             if(!empty($goods_data['goods_thumb']))
