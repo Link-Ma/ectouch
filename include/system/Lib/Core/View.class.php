@@ -151,7 +151,7 @@ class View {
                 define('THEME_PATH',   dirname(BASE_LIB_PATH).'/'.$group.basename(TMPL_PATH).'/'.$theme);
                 define('APP_TMPL_PATH',__ROOT__.'/'.$app_name.C('APP_GROUP_PATH').'/'.$group.basename(TMPL_PATH).'/'.$theme);
             }else{
-				if(C('VIEW_PATH')){ // 模块设置独立的视图目录
+                if(C('VIEW_PATH')){ // 模块设置独立的视图目录
                     $tmplPath   =   C('VIEW_PATH');
                 }else{  // 定义TMPL_PATH 改变全局的视图目录到模块之外
                     $tmplPath   =   TMPL_PATH.$group;
@@ -192,8 +192,7 @@ class View {
         }elseif(false === strpos($template, '/')){
             $template = MODULE_NAME . $depr . $template;
         }
-        // 首页模板
-        $template = $template == C('DEFAULT_MODULE'). $depr .C('DEFAULT_ACTION') ? C('DEFAULT_ACTION'):$template;
+        $template = ($template == C('DEFAULT_MODULE'). $depr .C('DEFAULT_ACTION')) ? C('DEFAULT_ACTION'):$template;
         return THEME_PATH.strtolower($template).C('TMPL_TEMPLATE_SUFFIX');
     }
 
