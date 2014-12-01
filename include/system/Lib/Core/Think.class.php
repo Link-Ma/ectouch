@@ -114,10 +114,10 @@ class Think {
         }
 
         // 加载公共函数库文件
-        if(is_file(BASE_PATH.'Common/functions.php')) {
-            include BASE_PATH.'Common/functions.php';
+        if(is_file(BASE_PATH.'Common/function.php')) {
+            include BASE_PATH.'Common/function.php';
             // 编译文件
-            if(!APP_DEBUG)  $compile   .= compile(BASE_PATH.'Common/functions.php');
+            if(!APP_DEBUG)  $compile   .= compile(BASE_PATH.'Common/function.php');
         }
 
         // 加载项目公共文件
@@ -126,7 +126,7 @@ class Think {
             // 编译文件
             if(!APP_DEBUG)  $compile   .= compile(COMMON_PATH.'common.php');
         }
-        
+
         // 加载模式别名定义
         if(isset($mode['alias'])) {
             $alias = is_array($mode['alias'])?$mode['alias']:include $mode['alias'];
@@ -174,7 +174,6 @@ class Think {
             if(require_array(array(
                 CORE_PATH.'Behavior/'.$file,
                 EXTEND_PATH.'Behavior/'.$file,
-                BASE_PATH.'Behavior/'.$file,
                 LIB_PATH.'Behavior/'.$file,
                 $libPath.'Behavior/'.$file),true)
                 || (defined('MODE_NAME') && require_cache(MODE_PATH.ucwords(MODE_NAME).'/Behavior/'.$file))) {
