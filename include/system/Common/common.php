@@ -298,6 +298,10 @@ function import($class, $baseUrl = '', $ext='.class.php') {
         }elseif (in_array(strtolower($class_strut[0]), array('org', 'com'))) {
             // org 第三方公共类库 com 企业公共类库
             $baseUrl = LIBRARY_PATH;
+        }elseif ('touch' == strtolower($class_strut[0])) {
+            // touch 公共类库
+            $baseUrl = TOUCH_PATH;
+            $class   = substr($class,6);
         }else { // 加载其他项目应用类库
             $class   = substr_replace($class, '', 0, strlen($class_strut[0]) + 1);
             $baseUrl = APP_PATH . '../' . $class_strut[0] . '/'.basename($libPath).'/';
