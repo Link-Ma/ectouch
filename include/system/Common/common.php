@@ -323,16 +323,16 @@ function import($class, $baseUrl = '', $ext='.class.php') {
 function load($name, $baseUrl='', $ext='.php') {
     $name = str_replace(array('.', '#'), array('/', '.'), $name);
     if (empty($baseUrl)) {
-        if(0 === strpos($name, 'com/')){
+        if(0 === strpos($name, 'Core/')){
             //加载公共项目函数库
             $baseUrl    = BASE_PATH .'Common/';
-            $name       = substr($name, 4);
+            $name       = substr($name, 5);
         } elseif (0 === strpos($name, '@/')) {
             //加载当前项目函数库
             $baseUrl    = COMMON_PATH;
             $name       = substr($name, 2);
         } else {
-            //加载ThinkPHP 系统函数库
+            //加载系统函数库
             $baseUrl    = EXTEND_PATH . 'Function/';
         }
     }
