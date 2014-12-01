@@ -22,4 +22,4 @@ define('NO_CHECK_INSTALL', true);
 /* 载入配置文件 */
 require ('../include/define.php');
 /* 载入核心文件 */
-require (TOUCH_PATH . "system/init.php");
+require (TOUCH_PATH . "system/Init.php");
